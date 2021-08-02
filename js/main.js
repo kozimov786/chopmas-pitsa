@@ -77,12 +77,7 @@ let pizzaOptions = {
 
   ]
 };
-let order = {
-  type: [],
-  size: [],
-  topping:[],
-  addl: [],
-};
+let order = {};
 
 var elPizzaSizeRadioTemplate = document.querySelector('.pizza-size-radio-template').content;
 var elPizzaToppingCheckboxTemplate = document.querySelector('.pizza-topping-checkbox-template').content;
@@ -93,6 +88,7 @@ var elPizzaSizes = elPizzaForm.querySelector('.pizza-form__sizes');
 var elPizzaToppings = elPizzaForm.querySelector('.pizza-form__toppings');
 var elPizzaAddl = document.querySelector(".pizza-form__addl");
 var elPizzaSortResult = document.querySelector(".pizza-form__sort-result");
+var elSelect = document.querySelector(".pizza-form__field")
 
 
 function createSizeRadio (size) {
@@ -172,13 +168,18 @@ showPizzaSizeRadios();
 showPizzaToppings();
 showPizzaAddl();
 
-
+let sizeResult = document.querySelector(".pizza-form__size-result")
 var elsSizeRadio = document.querySelectorAll('.radio__input');
 if (elsSizeRadio.length > 0) {
   elsSizeRadio.forEach(function (radio) {
     radio.addEventListener('change', function () {
       order.size = pizzaOptions.sizes.find(size => size.size === Number(radio.value));
-      console.log(order.size);
+      sizeResult.textContent = `${order.size.name}  ${order.size.size} cm`
     });
   });
 }
+
+elSelect.addEventListener("change", ()=>{
+  order.breadTypes = pizzaOptions.breadTypes.find(breadTypes => breadTypes.name === elSelect.value)
+  document.querySelector(".pizza-form__sort-result").textContent = order.breadTypes.name;
+})

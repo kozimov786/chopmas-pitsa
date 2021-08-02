@@ -132,7 +132,7 @@ select{
   padding-left: 20px;
 }
 .pizza-form__fields{
-  max-width: 800px;
+  max-width: 600px;
 }
 .result-btn{
   padding: 10px 20px;
@@ -150,4 +150,8 @@ select{
 }
 .result-btn:active {
   opacity: 0.6;
+}
+.pizza-form__result span {
+  font-size: 18px;
+  font-weight: normal;
 }
