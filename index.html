@@ -35,11 +35,6 @@
           </fieldset>
         </div>
 
-        <div class="pizza-form__group">
-          <fieldset class="pizza-form__addl">
-            <legend>Qo'shimchalar:</legend>
-          </fieldset>
-        </div>
       </div>
 
 
@@ -47,7 +42,8 @@
         <p>Non turi: <span class="pizza-form__sort-result"></span></p>
         <p>O'lcham: <span class="pizza-form__size-result"></span></p>
         <p class="accorti">Ustida: <span class="pizza-form__topping-result"></span></p>
-        <p>Qo'shimcha: <span class="pizza-form__extra-result"></span></p>
+        <ul class="toppings"></ul>
+        <p>Umumiy: <span class="pizza-form__all-cost"></span></p>
 
         <button class="result-btn" type="submit">Buyurtma berish</button>
       </div>
@@ -73,12 +69,10 @@
     </label>
   </template>
 
-  <template class="pizza-addl-checkbox-template">
-    <label class="checkbox">
-      <input class="checkbox-addl__input checkbox__input visually-hidden" type="checkbox" name="">
-      <span class="checkbox-addl__control checkbox__control"></span>
-    </label>
+  <template class="toppings-template">
+    <li></li>
   </template>
+
 
   <script src="js/main.js"></script>
 </body>
